@@ -1,0 +1,29 @@
+1.
+
+type document.cookie on the console
+
+
+Output is “I_am_admin=68934a3e9455fa72420237eb05902327”
+
+MD5 of 68934a3e9455fa72420237eb05902327 = False
+MD5 of b326b5062b2f0e69046810717534cb09 = True
+
+I change the cookie to:
+"I_am_admin=b326b5062b2f0e69046810717534cb09"
+
+Good job! Flag : df2eb4ba34ed059a1e3e89ff4dfc13445f104a1a52295214def1c4fb1693a5c3
+
+2.
+go to : url + /robots.txt
+
+on robots txt there is some information about another folder called "/whatever"
+
+root:8621ffdbc5698829397d97767ac13db3
+
+MD5 decrypt = dragon
+
+/admin
+
+root:dragon
+
+d19b4823e0d5600ceed56d5e896ef328d7a2b9e7ac7e80f4fcdb9b10bcb3e7ff
