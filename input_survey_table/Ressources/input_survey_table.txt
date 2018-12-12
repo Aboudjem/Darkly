@@ -1,0 +1,17 @@
+Explications:
+
+form, sans aucune validation.
+
+Recherche de flag:
+
+1)inspecter un input
+2) changer la value
+3)Valider l'input
+
+
+Comment eviter la faille :
+
+def check_value(value):
+	if value >= 1 and value <=10:
+		return(1)
+	return(0)

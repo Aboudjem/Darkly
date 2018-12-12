@@ -1,0 +1,17 @@
+
+Explications:
+
+Cette faille est classée n°10 sur l’OWASP Top 10, c’est donc la dernière du classement. Ce n’est pas celle jugée comme étant la plus importante par l’OWASP, mais ce n’est pas pour autant qu’il faut l’ignorer, bien au contraire
+
+Par exemple : rediriger les utilisateurs vers un faux site pour faire du phising.
+
+Recherche de flag:
+
+lorsque on inspect le logo Fb : href="index.php?page=redirect&site=facebook"
+On remarque que Le site utilise une redirection qui prend en parametre un "site"  http://192.168.1.34?page=redirect&site=facebook
+ce parametre n'est pas protege puisque l'on peut y passer n'importe quel site 
+exemple : http://192.168.1.34?page=redirect&site=blabla
+
+Comment eviter la faille :
+
+allowed_redirect une liste de site vers les quels on peut etre rediriger peut etre une solution.

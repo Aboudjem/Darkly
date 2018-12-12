@@ -1,0 +1,12 @@
+
+Explications:
+
+L'attaque par force brute est une méthode utilisée en cryptanalyse pour trouver un mot de passe ou une clé. Il s'agit de tester, une à une, toutes les combinaisons possibles.
+
+Recherche de flag:
+prenont par exemple le login: joseph qui figure dans la table users
+on lance le script on se basant sur la liste des mots de passe les plus utilisé 
+
+#https://en.wikipedia.org/wiki/List_of_the_most_common_passwords(2014-2017)
+
+attention aux mot de passe non securisé

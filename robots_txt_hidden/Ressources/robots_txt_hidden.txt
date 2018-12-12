@@ -1,0 +1,21 @@
+Explications :
+
+Le protocole d'exclusion des robots, plus connu sous le nom de robots.txt, est une convention visant à empêcher les robots d'exploration (web crawlers) d'accéder à tout ou une partie d'un site web.
+
+Le fichier robots.txt, à placer la racine d'un site web, contient une liste de ressources du site qui ne sont pas censées être explorées par les moteurs de recherches.
+
+L'instruction Disallow: / signifie que le moteur ne doit pas explorer l'ensemble des répertoires et des pages du site. Cela aura pour effet de bloquer totalement les robots d'exploration des moteurs.
+
+Recherche de flag:
+
+en parcourant http://XXX.XXX.X.XXX/ .hidden/ On tombe sur des dossiers, qui contiennent des dossiers. 
+
+Mise en place d'un crawler qui lit l'ensemble des fichiers et affiche une seul fois le contenu.
+
+python script_hidden.py
+
+Comment eviter la faille :
+
+l'erreur c’est de croire que seuls les moteurs de recherche liront ce fichier, et non des humains.
+
+Utiliser  un htaccess pour proteger des dossier qui contienent des fichiers qu'on ne veut pas montrer.

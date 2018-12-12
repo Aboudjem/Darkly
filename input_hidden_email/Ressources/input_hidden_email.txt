@@ -1,0 +1,21 @@
+Explications:
+
+form hidden button submit 
+
+Recherche de flag:
+
+dans la page=recover de mdp
+On ne demande pas l'email de l'utilisateur (c'est tres loucheee), on suppose que lorsque on submit, le webmaster recoit une notification par email de demande de changement de mdp.
+
+Lorsque on inspect l'element on voit un :
+<input type="hidden" name="mail" value="webmaster@borntosec.com" maxlength="15">
+
+Si on change la value de l'email
+
+et que l'on submit on obtient donc le flag
+
+Comment eviter la faille :
+Ne pas mettre ce type d'information dans les parametres d'un formulaire en pensant que si c'est hidden alors c'est proteger!
+Il faut le gerer dans le backend
+
+
