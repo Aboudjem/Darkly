@@ -9,4 +9,6 @@ on lance le script on se basant sur la liste des mots de passe les plus utilisé
 
 #https://en.wikipedia.org/wiki/List_of_the_most_common_passwords(2014-2017)
 
+Comment eviter la faille :
+
 attention aux mot de passe non securisé
