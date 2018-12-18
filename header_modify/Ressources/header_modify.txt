@@ -1,0 +1,4 @@
+Dans le footer il y a un lien bornToSec qui redirige vers un page avec de la musique,
+dans les sources on peut voir qu'on nous invite a changer ses headers pour passer un Referer afin de faire croire que l'on vient de la page: https://www.nsa.gov et un User-Agent Custom qui va faire croire que l'on utilise un navigateur appele "ft_bornToSec" 
+
+Il n'y a aucun interet a faire cela, et si dans certains cas il serait utile, il faudrait plutot passer par une creation de session basique avec un token.

@@ -1,0 +1,1 @@
+Dans la page d'upload image, on peut Post sur le formulaire un fichier .php en le faisant passer pour une image en utilisant Tamper Data.

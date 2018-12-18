@@ -1,0 +1,7 @@
+En tapant dans le commentaire "script" il affiche un flag (alors qu'en soi le fait d'ecrire script n'est pas cense etre une faille), on peut eventuellement dans un cas reel executer du script en posant des balises.
+
+
+-----------------
+
+
+Utiliser des libs qui s'occupe de "sanitize" et d'eviter ce genre de faille.

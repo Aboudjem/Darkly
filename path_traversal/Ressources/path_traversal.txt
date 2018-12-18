@@ -1,0 +1,12 @@
+On peut se servir de l'include de la page afin de faire du path transversal directoring, pour remonter jusqu'a /etc/passwd
+
+il suffit de remonter directory apres directory en passant : ../../../etc/passwd
+
+lien: ?page=../../../../../../../etc/passwd
+
+Et ainsi obtenir le flag
+
+-----------
+
+
+On peut corriger cela en limitant l autorisation uniquement aux noms de fichiers present dans le dossier.

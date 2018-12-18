@@ -1,0 +1,7 @@
+En regardant le contenu du cookie (notamment via document.cookie dans la console) on peut se rendre compte que le cookie a pour cle: i_am_admin et un valeur "false" en md5.
+
+Generer "true" en md5 et editer le cookie pour y placer cette valeur.
+
+--------------
+
+Pour eviter ce probleme il faudrait mieux mettre la valeur admin dans une session enchiffree plutot que betement dans un cookie.

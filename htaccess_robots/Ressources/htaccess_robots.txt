@@ -1,0 +1,10 @@
+Dans robots.txt, on voit qu'il y a un dossier en disallow /whatever, si l'on rentre dedans on s apercois qu'il y a un htpasswd qui contient un login:password.
+
+Le password est crypte en MD5 qui correspond a "dragon"
+
+En se loggant a /admin on peut acceder au flag
+
+
+--------
+
+le htaccess limite les acces aux differentes routes, la en loccurence le .htpasswd n'etait pas protege par le .htaccess
