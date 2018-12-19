@@ -1,0 +1,34 @@
+
+Explications:
+Le cross-site scripting (abrégé XSS) est un type de faille de sécurité des sites web permettant d'injecter du contenu dans une page, provoquant ainsi des actions sur les navigateurs web visitant la page. 
+Les possibilités des XSS sont très larges puisque l'attaquant peut utiliser tous les langages pris en charge par le navigateur (JavaScript, Java, Flash...) et 
+de nouvelles possibilités sont régulièrement découvertes notamment avec l'arrivée de nouvelles technologies comme HTML5. 
+Il est par exemple possible de rediriger vers un autre site pour de l'hameçonnage ou encore de voler la session en récupérant les cookies.
+
+Recherche de flag:
+
+le but de cette excercice est d'injecter du XSS en utilisant le code encoding.
+
+dans la page http://10.11.200.79/?page=media&src=nsa
+
+lorsque on inspect la page on retrouve une balise object.
+The <object> tag is used to include objects such as images, audio, videos, Java applets, ActiveX, PDF, and Flash. The 'data' attribute of the object tag defines a URL that refers to the object's data.
+
+
+pour execcuter du JS il faut utiliser la balise <script>.
+Le Data URI scheme est un schéma d'URI, dans le contexte d'Internet, qui contient directement des données. L'IETF décrit ce schéma dans le RFC 239712.
+Le schéma est le suivant : data:[<mediatype>][;base64],<data>
+
+
+Si l'on transforme <script>alert(1)</script> en base 64 :
+	base64(<script>alert(1)</script>) ===> PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==
+
+http://10.11.200.79/?page=media&src=data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==
+
+
+Protection contre les XSS:
+
+En PHP :
+utiliser la fonction htmlspecialchars()​ qui filtre les '<' et '>' (cf. ci-dessus) ;
+utiliser la fonction htmlentities()​ qui est identique à htmlspecialchars()​ sauf qu'elle filtre tous les caractères équivalents au codage HTML ou JavaScript.
+utiliser strip_tags()​ qui supprime les balises.
